@@ -63,16 +63,10 @@ class select:
         print(u"检查当前python版本为：{}，目前版本只支持3.6以上".format(version))
         if version < "3.6.0":
             raise Exception
-        print(u"12306刷票小助手，最后更新于2019.09.18，请勿作为商业用途，交流群号："
-              u" 1群：286271084(已满)\n"
-              u" 2群：649992274(已满)\n"
-              u" 3群：632501142(已满)\n"
-              u" 4群: 606340519(已满)\n"
-              u" 5群: 948526733(已满)\n"
-              u" 7群: 660689659(已满)\n"
-              u" 8群: 620629239(已满)\n"
-              u" 6群: 608792930(未满)\n"
-              u" 9群: 693035807(未满)\n"
+        print(u"原项目地址：https://github.com/testerSunshine/12306"
+              u" 个人公众号：罐子里的茶\n"
+              u" 关注后可以直接加群，使用有任何问题第一时间为你处理\n"
+              u" 欢迎大家加入！\n"
               )
         print(
             f"当前配置：\n出发站：{TickerConfig.FROM_STATION}\n到达站：{TickerConfig.TO_STATION}\n车次: {','.join(TickerConfig.STATION_TRAINS) or '所有车次'}\n乘车日期：{','.join(TickerConfig.STATION_DATES)}\n坐席：{','.join(TickerConfig.SET_TYPE)}\n是否有票优先提交：{TickerConfig.IS_MORE_TICKET}\n乘车人：{TickerConfig.TICKET_PEOPLES}\n" \
