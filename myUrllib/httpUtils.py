@@ -2,6 +2,7 @@
 import json
 import random
 import socket
+import sys
 from collections import OrderedDict
 from time import sleep
 import requests
@@ -188,7 +189,6 @@ class HTTPClient(object):
                                                                                            bytes) else response.content
                     else:
                         print(f"url: {urls['req_url']}返回参数为空, 接口状态码: {response.status_code}")
-
                         logger.log(
                             u"url: {} 返回参数为空".format(urls["req_url"]))
                         if self.cdnList:
