@@ -1,5 +1,6 @@
 # -*- coding=utf-8 -*-
 import copy
+import sys
 import time
 from collections import OrderedDict
 from time import sleep
@@ -55,22 +56,8 @@ class GoLogin:
         :param passwd:
         :return: 权限校验码
         """
-        logurl = self.session.urls["login"]
 
-        loginData = OrderedDict()
-        loginData["username"] = user,
-        loginData["password"] = passwd,
-        loginData["sessionId"] = TickerConfig.sessionId,
-        loginData["sig"] = TickerConfig.sig,
-        loginData["if_check_slide_passcode_token"] = TickerConfig.if_check_slide_passcode_token,
-        loginData["scene"] = "nc_login",
-        loginData["appid"] = "otn",
-        loginData["tk"] = "",
-        loginData["answer"] = self.randCode,
-
-        tresult = self.session.httpClint.send(logurl, loginData)
         if 0 == 0:
-            print(u"登录成功")
             tk = TickerConfig.tk
             if 0 == 0:
                 return tk
@@ -102,8 +89,9 @@ class GoLogin:
                 if "result_code" in uamauthclientResult and uamauthclientResult["result_code"] == 0:
                     print(u"欢迎 {} 登录".format(uamauthclientResult["username"]))
                     return True
-                else:
-                    return False
+                if "result_code" in uamauthclientResult and uamauthclientResult["result_code"] == 2:
+                    print("tk失效 请更新")
+                    sys.exit()
             else:
                 self.session.httpClint.send(uamauthclientUrl, data)
                 url = self.session.urls["getUserInfo"]
@@ -121,21 +109,12 @@ class GoLogin:
             raise UserPasswordException(u"温馨提示: 用户名或者密码为空，请仔细检查")
         login_num = 0
         while True:
-            if loginConf(self.session):
-
-                result = getPassCodeNewOrderAndLogin1(session=self.session, imgType="login")
-                if not result:
-                    continue
-                self.randCode = getRandCode(self.is_auto_code, self.auto_code_type, result)
-                print(self.randCode)
-                login_num += 1
-                self.auth()
-                if self.codeCheck():
-                    uamtk = self.baseLogin(user, passwd)
-                    if uamtk:
-                        self.getUserName(uamtk)
-                        break
+            uamtk = self.baseLogin(user, passwd)
+            if uamtk:
+                self.getUserName(uamtk)
+                break
             else:
                 loginAysnSuggest(self.session, username=user, password=passwd)
                 login_num += 1
                 break
+
