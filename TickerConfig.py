@@ -5,14 +5,14 @@
 # 如果这个时候捡漏捡到的话，也是可以付款成功的，也就是说，捡漏+候补，可以最大程度提升抢票成功率
 
 # 刷票模式：1=刷票 2=候补+刷票
-TICKET_TYPE = 1
+TICKET_TYPE = 2
 
 # 出发日期(list) "2018-01-06", "2018-01-07"
 STATION_DATES = [
-    "2020-12-30"
+    "2020-12-25"
 ]
 # 预售放票时间, 如果是捡漏模式，可以忽略此操作
-OPEN_TIME = "11:29:57"
+OPEN_TIME = "12:43:00"
 
 
 # 填入需要购买的车次(list)，"G1353"
@@ -48,14 +48,11 @@ IS_MORE_TICKET = True
 TICKET_PEOPLES = [""]
 
 # 12306登录账号
-USER = ""
-PWD = ""
-sessionId = ""
-sig = ""
-if_check_slide_passcode_token = ""
+USER = "不需要配置"
+PWD = "不需要配置"
 tk = ""
-RAIL_EXPIRATION = ""
-RAIL_DEVICEID = ""
+RAIL_EXPIRATION = "1608974698285"
+RAIL_DEVICEID = "gtJfNuBFUBPOakMf1Ujs_h7pUWCjoJik-SsmL78AOHgmfFki0edSZmxdwyuEi4Hpj94MAAu-JKtQNIZA8fSh_kwlHBRt7mAcG9lO5NXcJIfo05u8gr3_mwCbhwUFBXOeTl6GuJpTke-5_s-LU1mtZWMbIGXJbAtN"
 
 
 # 加入小黑屋时间默认为5分钟，此功能为了防止僵尸票导致一直下单不成功错过正常的票
@@ -150,9 +147,9 @@ PASSENGER_TICKER_STR = {
 
 # 保护12306官网请求频率，设置随机请求时间，原则为5分钟不大于80次
 # 最大间隔请求时间
-MAX_TIME = 3
+MAX_TIME = 1
 # 最小间隔请求时间
-MIN_TIME = 1
+MIN_TIME = 0
 
 # 软件版本
 RE_VERSION = "1.2.004"
