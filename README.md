@@ -12,6 +12,9 @@
 
    - 
 
-启动命令：先执行： python3 run.py c
+启动命令：
+   1.安装依赖包:  pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
+   2.加入cdn:    python3 run.py c
+   3.启动脚本:    python3 run.py r  
 
-​					再执行:   python3 run.py r
+​			
