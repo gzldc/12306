@@ -3,7 +3,7 @@ import os
 import random
 import socket
 import time
-
+import TickerConfig
 import requests
 from bs4 import BeautifulSoup
 
@@ -93,15 +93,27 @@ class proxy:
         查询的时候设置代理ip,ip设置格式是ip地址+端口，推荐可用的ip代理池：https://github.com/jhao104/proxy_pool
         :return:
         """
-        ip = self.get_filter_proxy()
-        setIp = ip[random.randint(0, len(ip) - 1)]
+        setIp = self.getProxyFromPool()
         proxie = {
             'http': 'http://{}'.format(setIp),
             'https': 'http://{}'.format(setIp),
         }
         return proxie
 
+    def getProxyFromPool(self):
+        """
+        从ip代理池中获取代理ip
+        :return: 
+        """
+        if TickerConfig.IS_PROXY_POOL == 1:
+            url = TickerConfig.PROXY_POOL_URL
+            ip = requests.get(url).text
+        else:
+            ip_list = self.get_filter_proxy()
+            ip = ip_list[random.randint(0, len(ip_list) - 1)]
+        return ip
+
 
 if __name__ == "__main__":
     a = proxy()
-    print(a.get_filter_proxy())
+    print(a.getProxyFromPool())
