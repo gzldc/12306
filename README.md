@@ -10,6 +10,7 @@
 
 
 
+
    - 
 
 启动命令：
@@ -17,4 +18,12 @@
    2.加入cdn:    python3 run.py c
    3.启动脚本:    python3 run.py r  
 
-​			
+## IP 代理池
+推荐一个ip代理池的项目：https://github.com/Python3WebSpider/ProxyPool
+简单使用方法：`docker-compose up`
+
+## 本地云打码平台搭建（基于docker)
+在安装好docker环境下，运行如下命令：
+```angular2html
+docker run -d -p 8080:80 --name 12306 yinaoxiong/12306_code_server
+```

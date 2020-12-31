@@ -48,7 +48,7 @@ IS_MORE_TICKET = True
 TICKET_PEOPLES = [""]
 
 # 12306登录账号
-USER = "不需要配置"
+USER = "不需要配置aa"
 PWD = "不需要配置"
 tk = ""
 RAIL_EXPIRATION = "1608974698285"
@@ -115,6 +115,10 @@ ORDER_MODEL = 1
 # 2、测试UnitTest/TestAll/testProxy 测试代理是否可以用
 # 3、开启代理ip
 IS_PROXY = 0
+# 0表示不使用ip代理池，1表示使用ip代理池
+IS_PROXY_POOL = 1
+# ip代理池的地址
+PROXY_POOL_URL = "http://192.168.3.25:5555/random"
 
 
 # 3=自己打开浏览器在headers-Cookies中抓取RAIL_DEVICEID和RAIL_EXPIRATION，这个就不用配置selenium:30"
