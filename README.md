@@ -1,6 +1,7 @@
 #### 写在前面：
+​	视频教程：https://www.bilibili.com/video/BV1mK4y1V7cd/ 
 
-​	项目原地址：https://github.com/testerSunshine/12306
+​	项目原地址：https://github.com/testerSunshine/12306   
 
 ​	因作为没有维护，本人进行二次开发，现在可以用【2020-12-24】。有问题可以关注公众号:罐子里的茶，会有群二维码回复，有问题必定解答！最后祝大家都抢到过年的票。
 
