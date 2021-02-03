@@ -10,6 +10,7 @@ import TickerConfig
 from agency.agency_tools import proxy
 from config.emailConf import sendEmail
 from config.serverchanConf import sendServerChan
+from config.sre24Conf import sendSre24Push
 from inter.LiftTicketInit import liftTicketInit
 
 
@@ -55,6 +56,13 @@ class testAll(unittest.TestCase):
         :return:
         """
         sendServerChan(u"server酱 微信通知测试一下")
+
+    def testSre24Push(self):
+        """
+        实测 SRE24 微信/邮箱/短信是否可用
+        :return:
+        """
+        sendSre24Push(msg='sre24 通知测试一下')
 
     def testUserAgent(self):
         """

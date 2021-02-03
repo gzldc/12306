@@ -70,6 +70,10 @@ HOST = "120.79.35.41:8080"
 REQ_URL = "/verify/base64/"
 HTTP_TYPE = "http"
 
+#
+# 备注：sre24 推送支持免费一对多推送消息到 微信/短信/邮箱 提醒，可以设置一个 SRE24_TOKEN 代替下面分别设置 EMAIL_CONF 和 SERVER_CHAN_CONF 。
+#
+
 #  邮箱配置，如果抢票成功，将通过邮件配置通知给您
 #  列举163
 #  email: "xxx@163.com"
@@ -157,3 +161,7 @@ MIN_TIME = 0
 
 # 软件版本
 RE_VERSION = "1.2.004"
+
+
+# (可选) sre24 免费推送消息到 微信/短信/邮箱 提醒，token 值登录 https://sre24.com 「设置」页面获取
+SRE24_TOKEN = ''

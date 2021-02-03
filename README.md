@@ -28,3 +28,13 @@
 ```angular2html
 docker run -d -p 8080:80 --name 12306 yinaoxiong/12306_code_server
 ```
+
+## (可选)配置 sre24 免费推送消息到 微信/短信/邮箱 提醒
+
+推送 token 值通过微信免费扫码登录 https://sre24.com 「设置」页面获取，修改根目录配置文件 TickerConfig.py
+
+    SRE24_TOKEN = "xxx"
+
+保存后重启生效。
+
+备注：sre24 推送支持免费一对多推送消息到 微信/短信/邮箱 提醒，可以设置一个 SRE24_TOKEN 代替分别设置 EMAIL_CONF 和 SERVER_CHAN_CONF 。
