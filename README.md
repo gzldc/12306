@@ -1,5 +1,5 @@
 #### 写在前面：
-​	视频教程：
+​	视频教程：https://www.bilibili.com/video/BV1mK4y1V7cd
 
 ​	项目原地址：https://github.com/testerSunshine/12306   
 
