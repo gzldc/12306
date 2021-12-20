@@ -1,4 +1,8 @@
+###ps：又要过年了
+   我看最近12306登陆方式改成短信验证了，加上又要过年了，最近会抽空更新一版。【2021.12.20】
+
 #### 写在前面：
+ 
 ​	视频教程：https://www.bilibili.com/video/BV1mK4y1V7cd
 
 ​	项目原地址：https://github.com/testerSunshine/12306   
