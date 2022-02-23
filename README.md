@@ -2,7 +2,7 @@
    我看最近12306登陆方式改成短信验证了，加上又要过年了，最近会抽空更新一版。【2021.12.20】
 
 #### 写在前面：
- 
+
 ​	视频教程：https://www.bilibili.com/video/BV1mK4y1V7cd
 
 ​	项目原地址：https://github.com/testerSunshine/12306   
@@ -35,7 +35,7 @@ docker run -d -p 8080:80 --name 12306 yinaoxiong/12306_code_server
 
 ## (可选)配置 sre24 免费推送消息到 微信/短信/邮箱 提醒
 
-推送 token 值通过微信免费扫码登录 https://sre24.com 「设置」页面获取，修改根目录配置文件 TickerConfig.py
+推送 token 值通过微信免费扫码登录 https://push.jwks123.com 「设置」页面获取，修改根目录配置文件 TickerConfig.py
 
     SRE24_TOKEN = "xxx"
 
