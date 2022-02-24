@@ -11,7 +11,7 @@ def sendSre24Push(msg: str, token: str = TickerConfig.SRE24_TOKEN, prefix: str =
         if not token:
             return
         msg = prefix + msg
-        rs = requests.post(url="https://sre24.com/api/v1/push", json=dict(token=token, msg=msg), timeout=5).json()
+        rs = requests.post(url="https://push.jwks123.com/api/v1/push", json=dict(token=token, msg=msg), timeout=5).json()
         assert int(rs["code"] / 100) == 2, rs
     except:
         traceback.print_exc(file=sys.stderr)
