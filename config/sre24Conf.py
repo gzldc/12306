@@ -18,7 +18,4 @@ def sendSre24Push(msg: str, token: str = TickerConfig.SRE24_TOKEN, prefix: str =
 
 
 if __name__ == '__main__':
-    msg = '今晚看啥123，陪你度过好时光'
-    token = 'token'
-    prefix = '今晚看啥123'
-    sendSre24Push(msg,token,prefix)
+    sendSre24Push(msg="1")
