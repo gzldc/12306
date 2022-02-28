@@ -163,5 +163,5 @@ MIN_TIME = 0
 RE_VERSION = "1.2.004"
 
 
-# (可选) sre24 免费推送消息到 微信/短信/邮箱 提醒，token 值登录 https://sre24.com 「设置」页面获取
+# (可选) sre24 免费推送消息到 微信/短信/邮箱 提醒，token 值登录 https://push.jwks123.com 「设置」页面获取
 SRE24_TOKEN = ''
