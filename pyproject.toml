@@ -1,0 +1,87 @@
+[tool.poetry]
+name = "12306-ticket-grabber"
+version = "0.1.0"
+description = "A Python-based ticket booking system"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "*", from = "."}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+beautifulsoup4 = "4.5.3"
+bs4 = "0.0.1"
+requests = "2.18.4"
+Pillow = "*"
+wrapcache = "1.0.8"
+ntplib = "*"
+scikit-learn = "*"
+opencv-python = "*"
+keras = "2.2.4"
+tensorflow = "1.14.0"
+matplotlib = ">=3.0.2"
+numpy = ">=1.14.6"
+scipy = ">=1.1.0"
+selenium = "3.11.0"
+fake-useragent = "0.1.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.11.0"
+
+[tool.poetry.scripts]
+test = "pytest"
+tests = "pytest"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--cov=.",
+    "--cov-branch",
+    "--cov-report=term-missing:skip-covered",
+    "--cov-report=html:htmlcov",
+    "--cov-report=xml:coverage.xml",
+    "--cov-fail-under=80",
+    "-v",
+]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "slow: Tests that are slow to run",
+]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/site-packages/*",
+    "setup.py",
+    "*/migrations/*",
+    "*/.venv/*",
+    "*/venv/*",
+    "*/virtualenv/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+fail_under = 80
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
