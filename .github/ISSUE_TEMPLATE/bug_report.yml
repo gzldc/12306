@@ -1,0 +1,40 @@
+name: Bug 报告
+description: 报告可复现的问题
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: 请先阅读 README 中的项目状态与使用边界，并移除账号、手机号、Cookie、Token 等敏感信息。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 提交哈希或版本号
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 运行方式
+      options: [Docker, macOS, Linux, Windows, 其他]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 给出最小、完整、可重复的步骤。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 已脱敏日志
+      render: shell

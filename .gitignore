@@ -1,3 +1,22 @@
-.idea
-TickerConfig.py
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
 venv/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local configuration and runtime data
+TickerConfig.py
+tmp/
+*.log

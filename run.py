@@ -9,8 +9,12 @@ def parser_arguments(argv):
     :param argv:
     :return:
     """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("operate", type=str, help="r: 运行抢票程序, c: 过滤cdn, t: 测试邮箱和server酱，server酱需要打开开关")
+    parser = argparse.ArgumentParser(prog="python run.py", description="12306 命令行入口")
+    parser.add_argument(
+        "operate",
+        choices=("r", "c", "t"),
+        help="r: 运行程序；c: 过滤 CDN；t: 测试通知渠道",
+    )
 
     return parser.parse_args(argv)
 
@@ -30,4 +34,3 @@ if __name__ == '__main__':
     elif args.operate == "c":
         from agency.cdn_utils import filterCdn
         filterCdn()
-

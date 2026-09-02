@@ -151,7 +151,7 @@ class query:
                                                 "cdn": self.httpClint.cdn,
                                                 "status": True,
                                             }
-                                elif is_ticket_pass == '无' and ticket_info[37] == "1" and TickerConfig.TICKET_TYPE is 2:
+                                elif is_ticket_pass == '无' and ticket_info[37] == "1" and TickerConfig.TICKET_TYPE == 2:
                                     """
                                     is_ticket_pass如果有别的显示，但是可以候补，可以提issues提出来，附上query log，我将添加上
                                     判断车次是否可以候补

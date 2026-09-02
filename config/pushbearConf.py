@@ -22,7 +22,7 @@ def sendPushBear(msg):
             }
             httpClint = HTTPClient(0)
             sendPushBeaRsp = httpClint.send(sendPushBearUrls, data=data)
-            if sendPushBeaRsp.get("code") is 0:
+            if sendPushBeaRsp.get("code") == 0:
                 print(u"已下发 pushbear 微信通知, 请查收")
             else:
                 print(sendPushBeaRsp)

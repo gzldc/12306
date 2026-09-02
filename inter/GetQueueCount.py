@@ -53,7 +53,7 @@ class getQueueCount:
         :return:
         """
 
-        if sys.version_info.major is 2:
+        if sys.version_info.major == 2:
             new_train_date = filter(None, str(time.asctime(time.strptime(self.station_dates, "%Y-%m-%d"))).split(" "))
         else:
             new_train_date = list(filter(None, str(time.asctime(time.strptime(self.station_dates, "%Y-%m-%d"))).split(" ")))
@@ -61,7 +61,7 @@ class getQueueCount:
         data['train_date'] = "{0} {1} {2} {3} 00:00:00 GMT+0800 (中国标准时间)".format(
             new_train_date[0],
             new_train_date[1],
-            new_train_date[2] if len(new_train_date[2]) is 2 else f"0{new_train_date[2]}",
+            new_train_date[2] if len(new_train_date[2]) == 2 else f"0{new_train_date[2]}",
             new_train_date[4],
         ),
         data['train_no'] = self.ticketInfoForPassengerForm['queryLeftTicketRequestDTO']['train_no'],
@@ -89,7 +89,7 @@ class getQueueCount:
                 ticket = getQueueCountResult["data"]["ticket"]
                 ticket_split = sum(map(conversion_int, ticket.split(","))) if ticket.find(",") != -1 else ticket
                 countT = getQueueCountResult["data"]["countT"]
-                if int(ticket_split) is 0:
+                if int(ticket_split) == 0:
                     wrapcache.set(key=self.train_no, value=datetime.datetime.now(),
                                   timeout=TickerConfig.TICKET_BLACK_LIST_TIME * 60)
                     print(f"排队失败，当前余票数还剩: {ticket_split} 张")
@@ -145,7 +145,7 @@ if __name__ == '__main__':
     train_date = "{0} {1} {2} {3} 00:00:00 GMT+0800 (中国标准时间)".format(
         new_train_date[0],
         new_train_date[1],
-        new_train_date[2] if len(new_train_date[2]) is 2 else f"0{new_train_date[2]}",
+        new_train_date[2] if len(new_train_date[2]) == 2 else f"0{new_train_date[2]}",
         new_train_date[4],
     )
     print(train_date)
