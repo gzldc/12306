@@ -25,12 +25,12 @@ def autoSynchroTime():
             os.popen('w32tm /config /manualpeerlist:"{}" /syncfromflags:manual /reliable:yes /update'.format(host))
             os.popen('ping -n 3 127.0.0.1 >nul')
             sin = os.popen('w32tm /resync')
-            if sin is 0:
+            if sin == 0:
                 break
     else:  # mac同步地址，如果ntpdate未安装，brew install ntpdate    linux 安装 yum install -y ntpdate
         for host in hosts:
             sin = os.popen('ntpdate {}'.format(host))
-            if sin is 0:
+            if sin == 0:
                 break
     print(u"同步后时间:{}".format(str(datetime.datetime.now())[:22]))
 

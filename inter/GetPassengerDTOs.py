@@ -86,7 +86,7 @@ class getPassengerDTOs:
             self.is_more_ticket_num = len(user_info)
         if secretStr:
             set_type = self.getPassengerTicketStr(self.set_type)
-            if self.is_more_ticket_num is 1:
+            if self.is_more_ticket_num == 1:
                 passengerTicketStrList.append(
                     '0,' + user_info[0]['passenger_type'] + "," + user_info[0][
                         "passenger_name"] + "," +

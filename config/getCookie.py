@@ -12,7 +12,7 @@ def getDrvicesID(session):
     :return:
     """
     print("cookie获取中")
-    if TickerConfig.COOKIE_TYPE is 1:
+    if TickerConfig.COOKIE_TYPE == 1:
         from selenium import webdriver
         cookies = []
         # 解决放镜像里 DevToolsActivePort file doesn't exist的问题
@@ -38,9 +38,9 @@ def getDrvicesID(session):
             session.httpClint.set_cookies(cookies)
             session.cookies = cookies
         print("cookie获取完成")
-    elif TickerConfig.COOKIE_TYPE is 2:
+    elif TickerConfig.COOKIE_TYPE == 2:
         request_device_id(session)
-    elif TickerConfig.COOKIE_TYPE is 3:
+    elif TickerConfig.COOKIE_TYPE == 3:
         # RAIL_DEVICEID,RAIL_EXPIRATION的值打开12306官网可以获取headers-Cookies
         if not TickerConfig.RAIL_DEVICEID or not TickerConfig.RAIL_EXPIRATION:
             print("警告！！: RAIL_DEVICEID,RAIL_EXPIRATION的值为空，请手动打开12306官网可以获取headers-Cookies中的RAIL_DEVICEID,RAIL_EXPIRATION，填入配置文件中")

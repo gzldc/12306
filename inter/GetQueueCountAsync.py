@@ -57,7 +57,7 @@ class getQueueCountAsync:
             - _json_att 没啥卵用，还是带上吧
         :return:
         """
-        if sys.version_info.major is 2:
+        if sys.version_info.major == 2:
             new_train_date = filter(None, str(time.asctime(time.strptime(self.station_dates, "%Y-%m-%d"))).split(" "))
         else:
             new_train_date = list(filter(None, str(time.asctime(time.strptime(self.station_dates, "%Y-%m-%d"))).split(" ")))
@@ -65,7 +65,7 @@ class getQueueCountAsync:
         data['train_date'] = "{0} {1} {2} {3} 00:00:00 GMT+0800 (中国标准时间)".format(
             new_train_date[0],
             new_train_date[1],
-            new_train_date[2] if len(new_train_date[2]) is 2 else f"0{new_train_date[2]}",
+            new_train_date[2] if len(new_train_date[2]) == 2 else f"0{new_train_date[2]}",
             new_train_date[4],
             time.strftime("%H:%M:%S", time.localtime(time.time()))
         ),
@@ -96,7 +96,7 @@ class getQueueCountAsync:
                     ticket_data = getQueueCountAsyncResult["data"]["ticket"]
                     ticket_split = sum(map(self.conversion_int, ticket_data.split(","))) if ticket_data.find(
                         ",") != -1 else ticket_data
-                    if int(ticket_split) is 0:
+                    if int(ticket_split) == 0:
                         # 增加余票数为0时，将车次加入小黑屋
                         wrapcache.set(key=self.train_no, value=datetime.datetime.now(),
                                       timeout=TickerConfig.TICKET_BLACK_LIST_TIME * 60)

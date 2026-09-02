@@ -65,7 +65,7 @@ class GoLogin:
                 return False
         elif 'result_message' in tresult and tresult['result_message']:
             messages = tresult['result_message']
-            if messages.find(u"密码输入错误") is not -1:
+            if messages.find(u"密码输入错误") != -1:
                 raise UserPasswordException("{0}".format(messages))
             else:
                 print(u"登录失败: {0}".format(messages))

@@ -47,7 +47,7 @@ class HTTPClient(object):
         self._cdn = None
         self.cdnList = cdnList
         self._proxies = None
-        if is_proxy is 1:
+        if is_proxy == 1:
             self.proxy = proxy()
             self._proxies = self.proxy.setProxy()
             # print(u"设置当前代理ip为 {}, 请注意代理ip是否可用！！！！！请注意代理ip是否可用！！！！！请注意代理ip是否可用！！！！！".format(self._proxies))
@@ -140,7 +140,7 @@ class HTTPClient(object):
         else:
             method = "get"
             self.resetHeaders()
-        if TickerConfig.RANDOM_AGENT is 1:
+        if TickerConfig.RANDOM_AGENT == 1:
             self.setHeadersUserAgent()
         self.setHeadersReferer(urls["Referer"])
         if is_logger:

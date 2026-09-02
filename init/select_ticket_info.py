@@ -126,7 +126,7 @@ class select:
         wrapcache.set("user_info", passenger, timeout=9999999)
 
         now = datetime.datetime.now()
-        if TickerConfig.ORDER_MODEL is 1:
+        if TickerConfig.ORDER_MODEL == 1:
             print(f"预售还未开始，阻塞中，预售时间为{TickerConfig.OPEN_TIME}, 当前时间为: {now.strftime('%H:%M:%S')}")
             sleep_time_s = 0.1
             sleep_time_t = 0.3
